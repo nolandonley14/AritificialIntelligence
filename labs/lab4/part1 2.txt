@@ -1,0 +1,28 @@
+Nolan Donley
+Lab4
+Part 1 answers
+
+a) The board is being implemented as a vector of 9 character strings
+
+b) It makes class members inaccessible outside the class, but
+the members can be accessed by any subclass of that class.
+
+c)  if Grid size = 0
+    if the puzzle is solved
+
+d)
+
+e) The neural network understands the cells in the 9x9 Sudoku grid as a graph,
+ where the digits in the columns and rows are nodes.
+
+ There are a total of 81 nodes, and each one is connected to another node if
+ they lie on the same row and column.
+ 
+ A recurrent RN is trained to send and receive messages between nodes that
+ roughly translate to things like “I’m a 7, hence you can’t also be a 7”,
+ so that it can work out by deduction what numbers fit where on the grid.
+ It spits out a probability distribution for each digit to work out what
+ number is most likely the correct fit for a particular cell. To train the
+ model, the researchers generated a dataset containing 216,000 puzzles of
+ varying difficulty. The easiest level had 34 out of 81 numbers already filled,
+ and the hardest level had only 17 digits given.

@@ -1,0 +1,32 @@
+Script started on Fri Apr  3 23:12:00 2020
+[?1034hbash-3.2$ c++ Eliza.cpp
+bash-3.2$ ./a.out
+
+The Doctor is in.
+
+Hey, my name is Eliza, What's your name?
+ - Nolan
+Hey there Nolan! What's on your mind?
+ - The coronavirus
+How long have you been thinking about the coronavirus ?
+ - for about a month
+Can you elaborate?
+ - I think people should stay inside.
+Do you really think so?
+ - Yes, i I don't think people are taking it seriously.
+You seem quite positive.
+ - anyway, what do you think?
+We were discussing you, not me.
+ - oh, sorry haha.
+Please don't apologize Nolan.
+ - okay, I wont 't
+Can you elaborate?
+ - Actually, I have to l go. Bye1!
+
+Nolan, I hope I have made you feel better today. If
+you need to speak some more, you know where to find me. :)
+
+bash-3.2$ exit
+exit
+
+Script done on Fri Apr  3 23:15:20 2020

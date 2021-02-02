@@ -1,0 +1,38 @@
+Script started on Thu Feb 20 17:36:28 2020
+[?1034hbash-3.2$ swipl
+% library(swi_hooks) compiled into pce_swi_hooks 0.00 sec, 2,120 bytes
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 5.8.0)
+Copyright (c) 1990-2009 University of Amsterdam.
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+[?1034h?- []f]a]c]t][C.
+% fact compiled 0.00 sec, 632 bytes
+true.
+
+?- fact()[C[C6),) )X)[C.
+X = 720 .
+
+?- []s]u]m]s]q]u]a]r]e]s][C.
+% sumsquares compiled 0.00 sec, 664 bytes
+true.
+
+?- sum(0[C[K([K)[C[C6),) )X)[C.
+X = 91 .
+
+?- exit
+|    exit
+|    exit()[C[C
+|    quit
+|    q
+|    e
+|    ERROR: Stream user_input:0:29 Syntax error: Unexpected end of file
+?- 
+% halt
+bash-3.2$ exit
+exit
+
+Script done on Thu Feb 20 17:40:50 2020

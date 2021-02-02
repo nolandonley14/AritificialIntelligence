@@ -1,0 +1,27 @@
+always: Can you think of a specific example?
+because: Is that the real reason?
+sorry: Please don't apologize _.
+maybe: You don't seem very certain.
+i think: Do you really think so?
+you: "We were discussing you, not me."
+yes: Why do you think so?, You seem quite positive.
+no: Why not?, Are you sure?
+the: How long have you been thinking about the *?
+i am: I am sorry to hear you are *., How long have you been *?, Do you believe it is normal to be *?, Do you enjoy being *?
+i'm: I am sorry to hear you are *., How long have you been *?, Do you believe it is normal to be *?, Do you enjoy being *?
+i feel: Tell me more about such feelings., Do you often feel *?, Do you enjoy feeling *?, Why do you feel that way?
+family: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+mother: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+mom: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+dad: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+father: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+sister: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+brother: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+husband: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+wife: Tell me more about your family., How do you get along with your family?, Is your family important to you?
+dream: What does that dream suggest to you?, Do you dream often?, What persons appear in your dreams?, Are you disturbed by your dreams?
+nightmare: What does that dream suggest to you?, Do you dream often?, What persons appear in your dreams?, Are you disturbed by your dreams?
+hello: Hey there! How are you?, Hey!, Are you doing okay?, Have you been working out?
+thank: You're Welcome., No problem., "No, Thank you _."
+thanks: You're Welcome., No problem., "No, Thank you _."
+^~`: "What does that suggest to you, _?", I see., I'm not sure I understand you fully., Can you elaborate?, "_, that is quite interesting."

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="random.css">
+  <link rel="stylesheet" type="text/css" href="dragdrop.css">
+  <link rel="stylesheet" type="text/css" href="draw.css">
+  <link rel="stylesheet" type="text/css" href="instructions.css">
+  <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+  <title>The Game Of Life Simulation</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  <script src="random.js"></script>
+  <script src="Cell.js"></script>
+  <script src="simulation.js"></script>
+</head>
+
+<body>
+  <h1 class="title"> Welcome to The Game of Life! </h1>
+  <div class="tabs">
+    <div class="buttons">
+      <button class="TabButton TabButton--active" id="Random" data-for-tab="1">Random Simulation</button>
+      <div class="spacer2"></div>
+      <button class="TabButton" id="DragDrop" data-for-tab="2">Drag and Drop</button>
+      <div class="spacer2"></div>
+      <button class="TabButton" id="Draw" data-for-tab="3">Draw</button>
+    </div>
+    <h2 id="sectionTitle">Random Simulation</h2>
+    <div class = "TabContent TabContent--active" data-tab="1">
+      <div class="sliders">
+        <div class="slider">
+          <input type="range" min="10" max="40" value="15" class="slidersA" id="colonySize">
+          <h3 class="sliderLabel">Colony Size</h3>
+          <h1 class="labels" id="colSize">400</h1>
+        </div>
+        <div class="spacer2"></div>
+        <div class="slider">
+          <input type="range" min="10" max="100" value="20" class="slidersA" id="numGen">
+          <h3 class="sliderLabel">Number of Generations</h3>
+          <h1 class="labels" id="genNum">50</h1>
+        </div>
+        <div class="spacer2"></div>
+        <div class="slider">
+          <input type="range" min="1" max="19" value="10" class="slidersA" id="life">
+          <h3 class="sliderLabel">Initial Life Rate</h3>
+          <h1 class="labels" id="lRate">50%</h1>
+        </div>
+        <div class="spacer2"></div>
+        <div class="slider">
+          <input type="range" min="1" max="1000" value="100" class="slidersA" id="animate">
+          <h3 class="sliderLabel">Animation Rate</h3>
+          <h1 class="labels" id="frameRate">1 Frame / 100 ms</h1>
+        </div>
+      </div>
+      <div class="spacer2"></div>
+      <div class="main">
+          <div id="canvasContainer"></div>
+          <div class="spacer2"></div>
+          <div class="summary">
+            <button id="simButton">Simulate</button>
+            <div class="spacer"></div>
+            <div class="sum">
+                <h2>Current Gen: </h2>
+                <h1 class="label" id="currentGen">0</h1>
+                <h2>Number of Starting Alive: </h2>
+                <h1 class="label" id="startAlive">0</h1>
+                <h2>Number of Alive after Sim: </h2>
+                <h1 class="label" id="endAlive">0</h1>
+                <h2>Number of Births: </h2>
+                <h1 class="label" id="numBirths">0</h1>
+                <h2>Number of Deaths: </h2>
+                <h1 class="label" id="numDeaths">0</h1>
+                <h2>Average Life Span: </h2>
+                <h1 class="label" id="avgLife">0</h1>
+            </div>
+          </div>
+      </div>
+      <div class="rules">
+        <div class="pageRules">
+          <h3>How the Random Works</h3>
+          <h4>Colony size is the number of simorgs total. The colony is always n x n.</h4>
+          <h4>Number of generations is just how many generations you want to simulate.</h4>
+          <h4>The initial life rate is the percentage of colony size that starts out alive.</h4>
+          <h4>The animation rate is the speed of the animation. (1 Frame / # shown)</h4>
+          <h4>Changing the colony size or initial life rate sliders creates a new random colony.</h4>
+          <h4>However, changing the # of generations or animation rate does not.</h4>
+          <h4>Start the simulation by pressing the "Simulate" button.</h4>
+        </div>
+        <div class="spacer2"></div>
+        <div class="simRules">
+          <h3>How the Simulation Works</h3>
+          <h4> Each cell with one or no neighbors dies, as if by loneliness. </h4>
+          <h4> Each cell with four or more neighbors dies, as if by overpopulation. </h4>
+          <h4> Each cell with two or three neighbors survives. </h4>
+          <h4> Each cell with three neighbors becomes populated. </h4>
+          <h4> Each cell that ages over 10 generations dies. </h4>
+          <h4> Each cell with four or more neighbors dies, as if by overpopulation. </h4>
+        </div>
+      </div>
+    </div>
+    <div class="TabContent" data-tab="2">
+      <div class="sliders">
+        <div class="fileDropContainer">
+          <p id="dropzone">
+            Drag your file here.
+          </p>
+        </div>
+        <div class="spacer2"></div>
+        <div class="slider">
+          <input type="range" min="10" max="100" value="20" class="slidersA" id="numGen2">
+          <h3 class="sliderLabel">Number of Generations</h3>
+          <h1 class="labels" id="genNum2">50</h1>
+        </div>
+        <div class="spacer2"></div>
+        <div class="slider">
+          <input type="range" min="1" max="1000" value="100" class="slidersA" id="animate2">
+          <h3 class="sliderLabel">Animation Rate</h3>
+          <h1 class="labels" id="frameRate2">1 Frame / 100 ms</h1>
+        </div>
+      </div>
+      <div class="spacer2"></div>
+      <div class="main">
+          <div id="canvasContainer2"></div>
+          <div class="spacer2"></div>
+          <div class="summary">
+            <button id="simButton2">Simulate</button>
+            <div class="spacer"></div>
+            <div class="sum">
+                <h2>Current Gen: </h2>
+                <h1 class="label" id="currentGen2">0</h1>
+                <h2>Number of Starting Alive: </h2>
+                <h1 class="label" id="startAlive2">0</h1>
+                <h2>Number of Alive after Sim: </h2>
+                <h1 class="label" id="endAlive2">0</h1>
+                <h2>Number of Births: </h2>
+                <h1 class="label" id="numBirths2">0</h1>
+                <h2>Number of Deaths: </h2>
+                <h1 class="label" id="numDeaths2">0</h1>
+                <h2>Average Life Span: </h2>
+                <h1 class="label" id="avgLife2">0</h1>
+            </div>
+          </div>
+      </div>
+      <div class="rules">
+        <div class="pageRules">
+          <h3>How the Drag/Drop Works</h3>
+          <h4>The initial file must be: plain text, n x n space seperated grid, with 'X' for alive and '0' for empty.</h4>
+          <h4>Number of generations is just how many generations you want to simulate.</h4>
+          <h4>The animation rate is the speed of the animation. (1 Frame / # shown)</h4>
+          <h4>Changing the # of generations or animation rate does not start a new colony.</h4>
+          <h4>Start the simulation by pressing the "Simulate" button.</h4>
+        </div>
+        <div class="spacer2"></div>
+        <div class="simRules">
+          <h3>How the Simulation Works</h3>
+          <h4> Each cell with one or no neighbors dies, as if by loneliness. </h4>
+          <h4> Each cell with four or more neighbors dies, as if by overpopulation. </h4>
+          <h4> Each cell with two or three neighbors survives. </h4>
+          <h4> Each cell with three neighbors becomes populated. </h4>
+          <h4> Each cell that ages over 10 generations dies. </h4>
+          <h4> Each cell with four or more neighbors dies, as if by overpopulation. </h4>
+        </div>
+      </div>
+    </div>
+    <div class="TabContent" data-tab="3">
+      <div class="sliders">
+        <div class="slider">
+          <input type="range" min="10" max="40" value="15" class="slidersA" id="colonySize3">
+          <h3 class="sliderLabel">Colony Size</h3>
+          <h1 class="labels" id="colSize3">400</h1>
+        </div>
+        <div class="spacer2"></div>
+        <div class="slider">
+          <input type="range" min="10" max="100" value="20" class="slidersA" id="numGen3">
+          <h3 class="sliderLabel">Number of Generations</h3>
+          <h1 class="labels" id="genNum3">50</h1>
+        </div>
+        <div class="spacer2"></div>
+        <div class="slider">
+          <input type="range" min="1" max="1000" value="100" class="slidersA" id="animate3">
+          <h3 class="sliderLabel">Animation Rate</h3>
+          <h1 class="labels" id="frameRate3">1 Frame / 100 ms</h1>
+        </div>
+      </div>
+      <div class="spacer2"></div>
+      <div class="main">
+          <div id="canvasContainer3"></div>
+          <div class="spacer2"></div>
+          <div class="summary">
+            <button id="simButton3">Simulate</button>
+            <div class="spacer"></div>
+            <div class="sum">
+                <h2>Current Gen: </h2>
+                <h1 class="label" id="currentGen3">0</h1>
+                <h2>Number of Starting Alive: </h2>
+                <h1 class="label" id="startAlive3">0</h1>
+                <h2>Number of Alive after Sim: </h2>
+                <h1 class="label" id="endAlive3">0</h1>
+                <h2>Number of Births: </h2>
+                <h1 class="label" id="numBirths3">0</h1>
+                <h2>Number of Deaths: </h2>
+                <h1 class="label" id="numDeaths3">0</h1>
+                <h2>Average Life Span: </h2>
+                <h1 class="label" id="avgLife3">0</h1>
+            </div>
+          </div>
+      </div>
+      <div class="rules">
+        <div class="pageRules">
+          <h3>How the Draw Works</h3>
+          <h4>Left click and drag to create a colony</h4>
+          <h4>Left click to add/delete a single simorg</h4>
+          <h4>Resizing with the slider will restart the draw.</h4>
+          <h4>However, the changing the # of generations or animation rate will not.</h4>
+          <h4>Start the simulation by pressing the "Simulate" button.</h4>
+        </div>
+        <div class="spacer2"></div>
+        <div class="simRules">
+          <h3>How the Simulation Works</h3>
+          <h4> Each cell with one or no neighbors dies, as if by loneliness. </h4>
+          <h4> Each cell with four or more neighbors dies, as if by overpopulation. </h4>
+          <h4> Each cell with two or three neighbors survives. </h4>
+          <h4> Each cell with three neighbors becomes populated. </h4>
+          <h4> Each cell that ages over 10 generations dies. </h4>
+          <h4> Each cell with four or more neighbors dies, as if by overpopulation. </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 id="author">Webpage By: Nolan Donley</h3>
+
+  <script type="text/javascript">
+    function setupTabs() {
+      document.querySelectorAll(".TabButton").forEach(button => {
+        button.addEventListener("click", () => {
+          var elem = document.getElementById('sectionTitle');
+          const bar = button.parentElement;
+          const barContainer = bar.parentElement;
+          const tabNumber = button.dataset.forTab;
+          const tabToActivate = barContainer.querySelector(`.TabContent[data-tab="${tabNumber}"]`);
+
+          bar.querySelectorAll(".TabButton").forEach(button => {
+            button.classList.remove("TabButton--active");
+          });
+
+          barContainer.querySelectorAll(".TabContent").forEach(tab => {
+            tab.classList.remove("TabContent--active");
+          });
+
+          elem.innerHTML = button.innerHTML;
+          button.classList.add("TabButton--active");
+          tabToActivate.classList.add("TabContent--active");
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setupTabs();
+    });
+  </script>
+
+</body>
+
+</html>

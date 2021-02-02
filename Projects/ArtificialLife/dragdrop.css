@@ -1,0 +1,30 @@
+.fileDropContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#dropzone {
+
+  border-style: dashed;
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+  padding: 36px 24px;
+  line-height: 36px;
+}
+
+#simButton2, #simButton3 {
+  background-color: skyblue;
+  border-color: navy;
+  border-width: thin;
+  height: 40px;
+  color: navy;
+  font-family: Arial;
+  font-size: 30px;
+  align-self: center;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 50%;
+}

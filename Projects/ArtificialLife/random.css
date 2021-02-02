@@ -1,0 +1,223 @@
+body {
+  background-color: lightblue;
+}
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.TabContent {
+  display: none;
+}
+
+.TabContent--active {
+  display: block;
+}
+
+#canvas {
+  width: 500px;
+  height: 500px;
+}
+
+#author {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+#simButton, .TabButton {
+  background-color: skyblue;
+  border-color: navy;
+  border-width: thin;
+  height: 40px;
+  color: navy;
+  font-family: Arial;
+  font-size: 30px;
+  align-self: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Passion One';
+}
+
+#simButton {
+    width: 50%;
+}
+
+#sectionTitle {
+  align-self: center;
+}
+
+.TabButton:hover {
+  background-color: gray;
+  color: white;
+}
+
+.TabButton--active {
+  background-color: navy;
+  outline: 0;
+  color: white;
+}
+
+.labels {
+  font-size: 50px;
+  margin: 0;
+}
+
+.sliderLabel {
+  margin-bottom: 0;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sum {
+  background-color: skyblue;
+  border-radius: 10px;
+  padding:5px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
+  justify-items: end;
+  align-items: center;
+}
+
+.sum h2 {
+  margin: 10px 0px;
+}
+
+.sum h1 {
+  margin: 10px 0px;
+}
+
+.spacer {
+  width: 10px;
+  height: 10px;
+}
+
+.spacer2 {
+  width: 50px;
+  height: 25px;
+}
+
+.label {
+  width: 100%;
+  text-align: left;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slidersA {
+  cursor: pointer;
+  align-self: center;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+}
+
+.rules {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: skyblue;
+  margin: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-content:space-around;
+  border-radius: 10px;
+}
+
+.pageRules h4 {
+    margin: 10px 0px;
+}
+
+.simRules h4 {
+    margin: 10px 0px;
+}
+
+h1 {
+  color: navy;
+  font-family: Arial;
+  text-align: center;
+  font-family: 'Passion One';
+  font-size: 50px;
+  font-weight: 400;
+}
+
+h2 {
+  color: navy;
+  font-family: Arial;
+}
+
+h3 {
+  color: navy;
+  font-family: Arial;
+  text-align: center;
+}
+
+h4 {
+ color: navy;
+ font-family: Arial;
+ text-align: center;
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+input[type="range"] {
+ -webkit-appearance: none;
+ justify-content: center;
+}
+
+input[type="range"]:focus {
+ outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+ background: navy;
+ height: 5px;
+ border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-track {
+ background: navy;
+ height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ height: 15px;
+ width: 15px;
+ background: white;
+ margin-top: -5px;
+ border-radius: 50%;
+ border-color: black;
+}
+
+input[type="range"]::-moz-range-thumb {
+ height: 15px;
+ width: 15px;
+ background: pink;
+ margin-top: -5px;
+ border-radius: 50%;
+}

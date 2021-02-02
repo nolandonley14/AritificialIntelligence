@@ -1,0 +1,67 @@
+****Eliza the Psychotherapist****
+
+This is a C++ program that behaves like a (simple) psychotherapist.
+The program will ask a question and the user will enter an answer to the question.
+The process repeats until the user's input contains the word "bye".
+The following example shows what the user will see on the screen (user input is in bold):
+
+The doctor is in.What's on your mind?
+-I'm depressed.
+
+I am sorry to hear you are depressed.
+-My boyfriend is mad at me.
+
+Your boyfriend is mad at you.
+-That's right. He always says I talk too much.
+
+Can you think of a specific example?
+-I can't think of any right now. I'm sorry.
+
+Please don't apologize.
+-Anyway, I think my boyfriend is seeing someone else.
+
+Do you really think so?
+-Yes, I do.
+
+Why do you think so?
+-I can't go into details.
+
+That is quite interesting.
+-I've got to run. Bye.
+
+The "-" is a prompt that the program displays to remind the user to enter input.
+
+Algorithm Description:
+
+At the beginning of the program, Eliza reads the Database like this:
+
+For every entry in database.txt, save it in line and do the following:
+- save the word/phrase before the ":" as a string keyword.
+- save the strings, separated by "," as vector<string> responses.
+- insert the keyword, responses pair into the database.
+ex: i feel: Tell me more about such feelings., Do you often feel *?, Do you enjoy feeling *?
+keyword -> "i feel"
+responses -> "Tell me more about such feelings."
+              "Do you often feel *?"
+              "Do you enjoy feeling *?"
+
+Then, the conversation happens like this:
+
+1) Wait for user response
+2) For all of the words in the users response, check if they are in the Database.
+This way, if a match is found, it is guaranteed to be the first match of the response.
+If any of the words are "bye" got to 7).
+
+If a match is found:
+  3a) Get a random response from the database and go to 4).
+If a match is NOT found:
+  3b) Check the phrases from the Database against the full input.
+      This test for the phrases like "i am", "i feel", etc.
+  If match is found, then get a random response and go to 4).
+  If match is not found, then get a random response from the "unknown" category and go to 4).
+
+4) Check if the response contains '*', which indicates that the rest of the user input (after the keyword)
+  should be inserted into the response at that point.
+5) Check if the response contains '_', which indicates that the user's name should be inserted at that point.
+6) Respond and return to 1).
+7) Exit the therapy session.

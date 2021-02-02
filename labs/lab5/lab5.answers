@@ -1,0 +1,20 @@
+I.  true
+    ERROR: undefined procedure
+    true
+    false
+    false
+
+II. true - susan is marys mom
+    false - ray is not peters father
+    false - jack does not have a father
+    X = jack,
+    Y = peter . - jack is susan's father, peter is susan's son.
+
+III. Class = csc480
+     Class = csc380
+     Person = toby
+
+     It needs to use the variables because it doesn't pertain to a
+     specific person or class but and of them
+
+     Answers would not be different
